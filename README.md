@@ -43,7 +43,7 @@ Hier wird die Vorgehensweise für die Erstellung formuliert:
 			    branchname
 	- (gegebenenfalls branch mit **git branch -d bearbeiten** löschen da wir nichts weiter machen möchten mit dem branch)
 	- jetzt wieder: **git push** -> damit die Änderung auch auf GitHub wirksam wird
-
+____________________________________________________________________________________________________________________
 Branch und Merge nochmal übersichtlich
 für unser Programm:
 bei der Version vom 24.05 kann man das Impressum zum Beispiel über branch und merge hinzufügen:
