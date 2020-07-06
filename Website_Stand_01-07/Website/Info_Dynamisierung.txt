@@ -1,0 +1,8 @@
+Folgende Funktionen sind dynamisiert:
+
+- Registrierung (mit Error-Markierung, falls Zeile nicht ausgefüllt ist)
+- Alert, wenn Registrierung erfolgreich
+- Login (Überprüfung, ob User existiert & Error-Markierung, falls User/Passwort falsch ist)
+- Im Header wird Vorname, Nachname und Adresse aktualisiert 
+- Profil bearbeiten (Zeilen werden mit aktuellen Daten ausgefüllt & Änderungen werden durch "Speichern" übernommen --> Update)
+
