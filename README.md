@@ -34,7 +34,7 @@ Hier wird die Vorgehensweise für die Erstellung formuliert:
 	- nun können wir hier Änderungen vornehmen und probieren
 	z.B. wir möchten eine unnütze Datei löschen, dazu gehen wir wie folgt vor:
 		**git rm datei_name**
-		**git commit -m "Datei löschen"** -> datei wurde nicht wircklih gelöscht, da wir auf einem anderen Branch sind
+		**git commit -m "Datei löschen"** -> datei wurde nicht wirklich gelöscht, da wir auf einem anderen Branch sind
 
 4. Merge - überführung von Änderungen eines anderen branch (nicht master)
 	Merge verbindet die Zweige master und bearbeiten (in unserem Fall)
@@ -45,7 +45,25 @@ Hier wird die Vorgehensweise für die Erstellung formuliert:
 	- jetzt wieder: **git push** -> damit die Änderung auch auf GitHub wirksam wird
 
 Branch und Merge nochmal übersichtlich
-Befehl					
+für unser Programm:
+bei der Version vom 24.05 kann man das Impressum zum Beispiel über branch und merge hinzufügen:
+
+**git branch impressum**				wir erstellen eine neue branch
+**git checkout impressum**				wir wechseln in die branch rein
+
+**git add Website_Stand_24-05/Website/impressum.html**  wir fügen das Impressu hinzu
+**git commit -m "Impressum hinzufügen"**
+
+**git checkout master**					wir gehen in den main branch
+
+**git merge impressum**					wir benutzen merge um die Änderung durchzuführen
+
+**git branch -d impressum**				wir löschen denn branch impressum
+
+**git push**						und laden die neueste version (mit impressum) hoch
+
+
+Nur ein Beispiel, unabhängig von unserer Website				
 **git add Datei.txt**
 **git commit -m "Neue Datei"**
 
@@ -53,10 +71,13 @@ Befehl
 
 **git branch dateiloeschen**		Erstellen eines neuen branches
 **git checkout dateiloeschen**		Wir gehen in diesen branch
+
+**git rm Datei.txt
 **git commit -m "Datei wird gelöscht"**	
 
 **git checkout master**			Wir gehen zurück in den Haupt branch
-**git merge dateiloeschen**			Wir machen die Änderungen in dateiloeschen wirksam
+**git merge dateiloeschen**		Wir machen die Änderungen in dateiloeschen wirksam
 
+**git branch -d dateiloeschen**		branch löschen
 **git push**				Erneuerung von GitHub -> Datei ist weg
 	
