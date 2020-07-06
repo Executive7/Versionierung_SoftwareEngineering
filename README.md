@@ -62,7 +62,7 @@ bei der Version vom 24.05 kann man das Impressum zum Beispiel über branch und m
 
 **git push**						und laden die neueste version (mit impressum) hoch
 
-
+____________________________________________________________________________________________________________________
 Nur ein Beispiel, unabhängig von unserer Website				
 **git add Datei.txt**
 **git commit -m "Neue Datei"**
