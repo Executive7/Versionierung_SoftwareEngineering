@@ -48,36 +48,36 @@ Branch und Merge nochmal übersichtlich
 für unser Programm:
 bei der Version vom 24.05 kann man das Impressum zum Beispiel über branch und merge hinzufügen:
 	
-	**git branch impressum**				wir erstellen eine neue branch
-	**git checkout impressum**				wir wechseln in die branch rein
+	git branch impressum					wir erstellen eine neue branch
+	git checkout impressum					wir wechseln in die branch rein
 
-	**git add Website_Stand_24-05/Website/impressum.html**  wir fügen das Impressu hinzu
-	**git commit -m "Impressum hinzufügen"**
+	git add Website_Stand_24-05/Website/impressum.html  	wir fügen das Impressu hinzu
+	git commit -m "Impressum hinzufügen"
 
-	**git checkout master**					wir gehen in den main branch
+	git checkout master					wir gehen in den main branch
 
-	**git merge impressum**					wir benutzen merge um die Änderung durchzuführen
+	git merge impressum					wir benutzen merge um die Änderung durchzuführen
 
-	**git branch -d impressum**				wir löschen denn branch impressum
+	git branch -d impressum					wir löschen denn branch impressum
 
-	**git push**						und laden die neueste version (mit impressum) hoch
+	git push						und laden die neueste version (mit impressum) hoch
 
 ____________________________________________________________________________________________________________________
 Nur ein Beispiel, unabhängig von unserer Website (Löschen einer Datei)				
-	**git add Datei.txt**
-	**git commit -m "Neue Datei"**
+	git add Datei.txt
+	git commit -m "Neue Datei"
 
-	**git push**				Datei wird auf GitHub Repo hochgeladen
+	git push				Datei wird auf GitHub Repo hochgeladen
 
-	**git branch dateiloeschen**		Erstellen eines neuen branches
-	**git checkout dateiloeschen**		Wir gehen in diesen branch
+	git branch dateiloeschen		Erstellen eines neuen branches
+	git checkout dateiloeschen		Wir gehen in diesen branch
 
-	**git rm Datei.txt
-	**git commit -m "Datei wird gelöscht"**	
+	git rm Datei.txt
+	git commit -m "Datei wird gelöscht"	
 
-	**git checkout master**			Wir gehen zurück in den Haupt branch
-	**git merge dateiloeschen**		Wir machen die Änderungen in dateiloeschen wirksam
+	git checkout master			Wir gehen zurück in den Haupt branch
+	git merge dateiloeschen			Wir machen die Änderungen in dateiloeschen wirksam
 
-	**git branch -d dateiloeschen**		branch löschen
-	**git push**				Erneuerung von GitHub -> Datei ist weg
+	git branch -d dateiloeschen		branch löschen
+	git push				Erneuerung von GitHub -> Datei ist weg
 	
