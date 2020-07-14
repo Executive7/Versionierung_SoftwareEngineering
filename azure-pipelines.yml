@@ -16,7 +16,6 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    cd https://github.com/Executive7/Versionierung_SoftwareEngineering/blob/master/Website_CI/Backend/db.test.js
     npm install
-    npm run build
+    npm test
   displayName: 'npm install and build'
