@@ -1,39 +1,71 @@
-const Database = require("better-sqlite3");
-const dbOptions = {verbose: console.log};
-const dbFile = "./db/CashManagerDB.sqlite";
-const dbConnection = new Database(dbFile, dbOptions);
+const functions=require('./functions'); 
+const axios = require ("axios");
 
-const arbeitgeberDao = require("./dao/arbeitgeberDao");
-const schichtDao = require("./dao/schichtDao");
-const UserDao = require("./dao/userDao");
-
-
-var daoA=new arbeitgeberDao(dbConnection);
-var daoS=new schichtDao(dbConnection);
-var daoU=new UserDao(dbConnection);
+//  simple tests
+test('add 2 + 3 equals 5', ()=>{
+    expect(functions.add(2,3)).toBe(5);
+});
 
 
-test('Verbindungstest', () => {
-    expect(daoA.getConnection()).toBeTruthy();
+
+// null tests ---
+test('null', () => {
+    const n = null;
+
+    expect(n).toBeNull();
+    expect(n).toBeDefined();
+    expect(n).not.toBeUndefined();
+    expect(n).not.toBeTruthy();
+    expect(n).toBeFalsy();
+});
+
+// Number tests
+test('two plus two', () => {
+    const value = 2 + 3;
+    expect(value).toBeGreaterThan(3);
+    expect(value).toBeGreaterThanOrEqual(3.5);
+    expect(value).toBeLessThan(5);
+    expect(value).toBeLessThanOrEqual(4.5);
+  
+    // toBe and toEqual are equivalent for numbers
+    expect(value).toBe(4);
+    expect(value).toEqual(4);
   });
 
-test('User check UserID = 1', () => {
-  expect(daoU.loadById(3).id).toEqual(3);
-})
+// Object tests
+test('compare objects', () => {
+  const value =  functions.createUser();
+  expect(value).toEqual({
+    firstName: "German",
+    secondName: "Nemirovski"
+  });
 
-test('Angemeldete Userzahl überprüfen = 3?',() => {
-  expect(daoU.loadAll()).toHaveLength(3);
-})
+ /* expect(value).toBe({
+    firstName: "German",
+    secondName: "Nemirovski"
+  });
+*/
 
-test('Schicht check Schicht(1) vorhanden?',() => {
-  expect(daoS.exists(1)).toBeTruthy();
-})
-
-test('Stundenlohn bei Arbeitgeber Lidl = 12.5',() => {
-  expect(daoA.loadById(3).stundenlohn).toEqual(12.5);
-})
-
-// FOREIGN KEY constraint test: darf nichtlöschbar sein -> notTure
-test('delete test', () => {
-  expect(daoA.delete(1)).not.toBeTruthy();
 });
+
+
+// Arrays 
+  
+  test('the shopping list has beer on it', () => {
+    expect(functions.shoppingList).toContain('beer');
+    expect(new Set(functions.shoppingList)).toContain('beer');
+  });
+
+// Objects   
+test('gleiches Objekt', () => {
+    expect(functions.createUser()).toEqual({"firstName":"German", "secondName":"Nemirovski"});
+    
+  });
+
+  // Testing Asynchroneous calls
+
+
+  test('get a promize', () => {
+    functions.fetchUser().
+        then(data => { expect(data.name).toBe('Leanne Graham');});
+  });
